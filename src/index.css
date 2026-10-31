@@ -1,0 +1,142 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    /* Default Palette: Electric Cyan & Mint / Clean Mobility */
+    --accent: #06b6d4;
+    --accent-hover: #0891b2;
+    --accent-light: #22d3ee;
+    --accent-sec: #10b981;
+    --accent-sec-light: #34d399;
+    --accent-glow: rgba(6, 182, 212, 0.25);
+    --accent-subtle: rgba(6, 182, 212, 0.12);
+    --accent-border: rgba(6, 182, 212, 0.35);
+  }
+
+  [data-theme="cyan"] {
+    --accent: #06b6d4;
+    --accent-hover: #0891b2;
+    --accent-light: #22d3ee;
+    --accent-sec: #10b981;
+    --accent-sec-light: #34d399;
+    --accent-glow: rgba(6, 182, 212, 0.25);
+    --accent-subtle: rgba(6, 182, 212, 0.12);
+    --accent-border: rgba(6, 182, 212, 0.35);
+  }
+
+  [data-theme="cobalt"] {
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
+    --accent-light: #60a5fa;
+    --accent-sec: #06b6d4;
+    --accent-sec-light: #38bdf8;
+    --accent-glow: rgba(59, 130, 246, 0.25);
+    --accent-subtle: rgba(59, 130, 246, 0.12);
+    --accent-border: rgba(59, 130, 246, 0.35);
+  }
+
+  [data-theme="emerald"] {
+    --accent: #10b981;
+    --accent-hover: #059669;
+    --accent-light: #34d399;
+    --accent-sec: #84cc16;
+    --accent-sec-light: #a3e635;
+    --accent-glow: rgba(16, 185, 129, 0.25);
+    --accent-subtle: rgba(16, 185, 129, 0.12);
+    --accent-border: rgba(16, 185, 129, 0.35);
+  }
+
+  [data-theme="amber"] {
+    --accent: #f97316;
+    --accent-hover: #ea580c;
+    --accent-light: #fb923c;
+    --accent-sec: #f59e0b;
+    --accent-sec-light: #fbbf24;
+    --accent-glow: rgba(249, 115, 22, 0.25);
+    --accent-subtle: rgba(249, 115, 22, 0.12);
+    --accent-border: rgba(249, 115, 22, 0.35);
+  }
+
+  [data-theme="violet"] {
+    --accent: #8b5cf6;
+    --accent-hover: #7c3aed;
+    --accent-light: #a78bfa;
+    --accent-sec: #ec4899;
+    --accent-sec-light: #f472b6;
+    --accent-glow: rgba(139, 92, 246, 0.25);
+    --accent-subtle: rgba(139, 92, 246, 0.12);
+    --accent-border: rgba(139, 92, 246, 0.35);
+  }
+
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  code, kbd, samp, pre, .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: #ffffff;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #060911;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Dynamic Palette Utility Classes */
+.text-accent {
+  color: var(--accent);
+}
+.text-accent-light {
+  color: var(--accent-light);
+}
+.text-accent-sec {
+  color: var(--accent-sec);
+}
+.bg-accent {
+  background-color: var(--accent);
+}
+.bg-accent-subtle {
+  background-color: var(--accent-subtle);
+}
+.border-accent {
+  border-color: var(--accent);
+}
+.border-accent-border {
+  border-color: var(--accent-border);
+}
+.shadow-accent-glow {
+  box-shadow: 0 10px 30px -10px var(--accent-glow);
+}
+.shadow-accent-sm {
+  box-shadow: 0 2px 10px -2px var(--accent-glow);
+}
+.btn-accent {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-sec) 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px -3px var(--accent-glow);
+  transition: all 0.2s ease;
+}
+.btn-accent:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 6px 20px -3px var(--accent-glow);
+}
